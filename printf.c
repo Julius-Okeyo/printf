@@ -8,6 +8,7 @@
 int _printf(const char *const format, ...)
 {
 	int a = 0, b = 0, i, j = 0;
+	int d, k, rem, num, div;
 	char c;
 	char *s;
 	va_list arg;
