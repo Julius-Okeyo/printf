@@ -33,6 +33,7 @@ int _printf(const char *const format, ...)
 						a++;
 						str++;
 					}
+					_putchar('\0');
 					break;
 				case 'i':
 					k = 1;
