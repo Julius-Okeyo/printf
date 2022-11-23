@@ -19,72 +19,63 @@ int _printf(const char *const format, ...)
 		if (format[j] == '%')
 		{
 			j++;
-			if (format[j] == 'c' || format[j] == 's')
-			{
-				switch (format[j]) {
-					case 'c':
-						c = va_arg(arg, int);
-						_putchar(c);
+			switch (format[j]) {
+				case 'c':
+					c = va_arg(arg, int);
+					_putchar(c);
+					a++;
+					break;
+				case 's':
+					str = va_arg(arg, char *);
+					while (*str)
+					{
+						_putchar(*str);
 						a++;
-						break;
-					case 's':
-						str = va_arg(arg, char *);
-						while (*str)
-						{
-							_putchar(*str);
-							a++;
-							str++;
-						}
-						break;
-				}
-			}
-			if (format[j] == 'i' || format[j] == 'd')
-			{
-				switch (format[j])
-				{
-					case 'i':
-						k = 1;
-						div = 10;
-						rem = va_arg(arg, int);
-						num = rem;
-						while (div >= 10)
-						{
-							k *= 10;
-							div = num / k;
-						}
-						while (rem > 10)
-						{
-							div = rem / k;
-							rem = rem % k;
-							_putchar(div + '0');
-							a++;
-							k /= 10;
-						}
-						_putchar(rem + '0');
+						str++;
+					}
+					break;
+				case 'i':
+					k = 1;
+					div = 10;
+					rem = va_arg(arg, int);
+					num = rem;
+					while (div >= 10)
+					{
+						k *= 10;
+						div = num / k;
+					}
+					while (rem > 10)
+					{
+						div = rem / k;
+						rem = rem % k;
+						_putchar(div + '0');
 						a++;
-						break;
-					case 'd':
-						k = 1;
-						div = 10;
-						rem = va_arg(arg, int);
-						num = rem;
-						while (div >= 10)
-						{
-							k *= 10;
-							div = num / k;
-						}
-						while (rem > 10)
-						{
-							div = rem / k;
-							rem = rem % k;
-							_putchar(div + '0');
-							a++;
-							k /= 10;
-						}
-						_putchar(rem + '0');
+						k /= 10;
+					}
+					_putchar(rem + '0');
+					a++;
+					break;
+				case 'd':
+					k = 1;
+					div = 10;
+					rem = va_arg(arg, int);
+					num = rem;
+					while (div >= 10)
+					{
+						k *= 10;
+						div = num / k;
+					}
+					while (rem > 10)
+					{
+						div = rem / k;
+						rem = rem % k;
+						_putchar(div + '0');
 						a++;
-						break;
-				}
+						k /= 10;
+					}
+					_putchar(rem + '0');
+					a++;
+					break;
 			}
 		}
 		else
