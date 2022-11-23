@@ -10,7 +10,7 @@ int _printf(const char *const format, ...)
 	int a = 0, b = 0, i, j = 0;
 	int d, k, rem, num, div;
 	char c;
-	char *s;
+	char *str;
 	va_list arg;
 
 	va_start(arg, format);
@@ -63,7 +63,7 @@ int _printf(const char *const format, ...)
 					while (div >= 10)
 					{
 						k *= 10;
-						div = mum / k;
+						div = num / k;
 					}
 					while (rem > 10)
 					{
