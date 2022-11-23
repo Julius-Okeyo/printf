@@ -48,7 +48,7 @@ int _printf(const char *const format, ...)
 					{
 						div = rem / k;
 						rem = rem % k;
-						_putcar(div + '0');
+						_putchar(div + '0');
 						a++;
 						k /= 10;
 					}
