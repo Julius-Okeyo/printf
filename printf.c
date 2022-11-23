@@ -86,7 +86,6 @@ int _printf(const char *const format, ...)
 						break;
 				}
 			}
-			j++;
 		}
 		else
 			_putchar(format[j]);
