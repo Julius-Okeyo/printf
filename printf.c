@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdlib.h>
 #include <stddef.h>
 #include "main.h"
 /**
@@ -32,7 +33,6 @@ int _printf(const char *const format, ...)
 					{
 						exit(1);
 					}
-					_putchar('\n');
 					break;
 				case 's':
 					str = va_arg(arg, char *);
@@ -50,9 +50,8 @@ int _printf(const char *const format, ...)
 					}
 					else
 					{
-						exit(1)
+						exit(1);
 					}
-					_putchar('\n');
 					break;
 				case 'i':
 					k = 1;
@@ -117,6 +116,7 @@ int _printf(const char *const format, ...)
 		a++;
 		j++;
 	}
+	_putchar('\n');
 	va_end(arg);
 	return (a);
 }
