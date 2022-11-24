@@ -43,7 +43,6 @@ int _printf(const char *const format, ...)
 							}
 							i++;
 						}
-						_putchar('\0');
 					}
 					_putchar('\n');
 					break;
