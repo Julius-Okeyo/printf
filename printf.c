@@ -22,15 +22,21 @@ int _printf(const char *const format, ...)
 			switch (format[j]) {
 				case 'c':
 					c = va_arg(arg, int);
-					_putchar(c);
-					a++;
+					if (c >= 32 && c <= 126)
+					{
+						_putchar(c);
+						a++;
+					}
 					break;
 				case 's':
 					str = va_arg(arg, char *);
 					while (*str)
 					{
-						_putchar(*str);
-						a++;
+						if (*str >= 32 && *str <= 126)
+						{
+							_putchar(*str);
+							a++;
+						}
 						str++;
 					}
 					_putchar('\0');
