@@ -16,12 +16,6 @@ int _printf(const char *const format, ...)
 	va_start(arg, format);
 	while (format[j])
 	{
-		if (format[j] == 92 && format[j + 1] == 'n')
-		{
-			_putchar(10);
-			_putchar(13);
-			j += 2;
-		}
 		if (format[j] == '%')
 		{
 			j++;
@@ -36,14 +30,17 @@ int _printf(const char *const format, ...)
 					break;
 				case 's':
 					str = va_arg(arg, char *);
-					while (*str)
+					if (str != NULL)
 					{
-						if (*str >= 32 && *str <= 126)
+						while (*str)
 						{
-							_putchar(*str);
-							a++;
+							if (*str >= 32 && *str <= 126)
+							{
+								_putchar(*str);
+								a++;
+							}
+							str++;
 						}
-						str++;
 					}
 					_putchar('\0');
 					break;
