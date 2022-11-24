@@ -16,6 +16,12 @@ int _printf(const char *const format, ...)
 	va_start(arg, format);
 	while (format[j])
 	{
+		if (format[j] == 92 && format[j + 1] == 'n')
+		{
+			_putchar(10);
+			_putchar(13);
+			j += 2;
+		}
 		if (format[j] == '%')
 		{
 			j++;
