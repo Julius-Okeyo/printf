@@ -10,8 +10,6 @@ int _printf(const char *const format, ...)
 {
 	int a = 0, j = 0;
 	int k, rem, num, div;
-	char c;
-	char *str;
 	va_list arg;
 
 	va_start(arg, format);
