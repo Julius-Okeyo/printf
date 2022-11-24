@@ -28,7 +28,7 @@ int _printf(const char *const format, ...)
 						_putchar(c);
 						a++;
 					}
-					/*_putchar('\n');*/
+					_putchar('\n');
 					break;
 				case 's':
 					str = va_arg(arg, char *);
@@ -44,7 +44,7 @@ int _printf(const char *const format, ...)
 							i++;
 						}
 					}
-					/*_putchar('\n');*/
+					_putchar('\n');
 					break;
 				case 'i':
 					k = 1;
@@ -110,6 +110,5 @@ int _printf(const char *const format, ...)
 		j++;
 	}
 	va_end(arg);
-	_putchar('\n');
 	return (a);
 }
