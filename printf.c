@@ -19,8 +19,7 @@ int _printf(const char *const format, ...)
 	va_start(arg, format);
 	if (format == NULL || format == emp)
 	{
-		_putchar('\n');
-		return (1);
+		return (0);
 	}
 	while (format[j])
 	{
