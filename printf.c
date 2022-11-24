@@ -9,7 +9,7 @@
 int _printf(const char *const format, ...)
 {
 	int a = 0, i = 0, j = 0;
-	int k, rem, num, div;
+	int k, rem, num, div, sign = 0;
 	char c;
 	char *str;
 	va_list arg;
@@ -37,7 +37,7 @@ int _printf(const char *const format, ...)
 						{
 							if (str[i] >= 32 && str[i] <= 126)
 							{
-								_putchar(*str);
+								_putchar(str[i]);
 								a++;
 							}
 							i++;
@@ -49,12 +49,19 @@ int _printf(const char *const format, ...)
 					k = 1;
 					div = 10;
 					rem = va_arg(arg, int);
+					if (rem < 0)
+					{
+						sign = 1;
+						rem = (-1 * rem);
+					}
 					num = rem;
 					while (div >= 10)
 					{
 						k *= 10;
 						div = num / k;
 					}
+					if (sign == 1)
+						_putchar('-');
 					while (rem > 10)
 					{
 						div = rem / k;
@@ -70,12 +77,19 @@ int _printf(const char *const format, ...)
 					k = 1;
 					div = 10;
 					rem = va_arg(arg, int);
+					if (rem < 0)
+					{
+						sign = 1;
+						rem = (-1 * rem);
+					}
 					num = rem;
 					while (div >= 10)
 					{
 						k *= 10;
 						div = num / k;
 					}
+					if (sign == 1)
+						_putchar('-');
 					while (rem > 10)
 					{
 						div = rem / k;
