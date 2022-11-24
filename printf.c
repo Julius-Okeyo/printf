@@ -116,7 +116,6 @@ int _printf(const char *const format, ...)
 		a++;
 		j++;
 	}
-	_putchar('\n');
 	va_end(arg);
 	return (a);
 }
