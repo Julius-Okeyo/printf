@@ -2,6 +2,18 @@
 #include <stddef.h>
 #include "main.h"
 /**
+ * _isdigit - checks whether a character is an integer
+ * @c: The character to be checked
+ * Return: 1 if c is an int else 0
+ */
+int _isdigit(char c)
+{
+	if (c >= 48 && c <= 57)
+		return (1);
+	else
+		return (0);
+}
+/**
  * _printf - mimics the behavior of printf
  * @format: string to be printed including string formatters
  * Return: The number of characters printed
@@ -27,6 +39,10 @@ int _printf(const char *const format, ...)
 					{
 						_putchar(c);
 						a++;
+					}
+					else
+					{
+						_printf("%s", "Error");
 					}
 					_putchar('\n');
 					break;
