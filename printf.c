@@ -8,7 +8,7 @@
  */
 int _printf(const char *const format, ...)
 {
-	int a = 0, j = 0;
+	int a = 0, i = 0; j = 0;
 	int k, rem, num, div;
 	char c;
 	char *str;
@@ -33,14 +33,14 @@ int _printf(const char *const format, ...)
 					str = va_arg(arg, char *);
 					if (str != NULL)
 					{
-						while (*str)
+						while (str[i])
 						{
-							if (*str >= 32 && *str <= 126)
+							if (str[i] >= 32 && str[i] <= 126)
 							{
 								_putchar(*str);
 								a++;
 							}
-							str++;
+							i++;
 						}
 					}
 					_putchar('\0');
