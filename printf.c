@@ -31,8 +31,9 @@ int _printf(const char *const format, ...)
 					}
 					else
 					{
-						_putchar('\n');
+						exit(1);
 					}
+					_putchar('\n');
 					break;
 				case 's':
 					str = va_arg(arg, char *);
@@ -50,8 +51,9 @@ int _printf(const char *const format, ...)
 					}
 					else
 					{
-						_putchar('\n');
+						exit(1);
 					}
+					_putchar('\n');
 					break;
 				case 'i':
 					k = 1;
