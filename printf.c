@@ -8,7 +8,7 @@
  */
 int _printf(const char *const format, ...)
 {
-	int a = 0, i = 0; j = 0;
+	int a = 0, i = 0, j = 0;
 	int k, rem, num, div;
 	char c;
 	char *str;
