@@ -31,7 +31,7 @@ int _printf(const char *const format, ...)
 					}
 					else
 					{
-						exit(1);
+						_putchar('\n');
 					}
 					break;
 				case 's':
