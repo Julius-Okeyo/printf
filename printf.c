@@ -110,5 +110,5 @@ int _printf(const char *const format, ...)
 		j++;
 	}
 	va_end(arg);
-	return (a);
+	return (a + 3);
 }
