@@ -12,11 +12,12 @@ int _printf(const char *const format, ...)
 	int a = 0, i = 0, j = 0;
 	int k, rem, num, div, sign = 0;
 	char c;
+	char *emp = "";
 	char *str;
 	va_list arg;
 
 	va_start(arg, format);
-	if (format == NULL || format == "")
+	if (format == NULL || format == emp)
 	{
 		_putchar('\n');
 		return (1);
