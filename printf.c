@@ -112,15 +112,16 @@ int _printf(const char *const format, ...)
 			j++;
 		}
 		else
+		{
 			_putchar(format[j]);
-		a++;
+			a++;
+		}
 		j++;
 	}
 	if (format[j] != '\n')
 	{
 		_putchar('\n');
-		a++;
 	}
 	va_end(arg);
-	return (a - 1);
+	return (a);
 }
