@@ -12,15 +12,15 @@ int _printf(const char *const format, ...)
 	int a = 0, i = 0, j = 0;
 	int k, rem, num, div, sign = 0;
 	char c;
-	/*char *emp = "";*/
+	char *emp = "";
 	va_list arg;
 
 	if (format == NULL && i == 0)
 		return (-1);
-	/*if (format == NULL && i == 1)
+	if (format == NULL && i == 1)
 		_printf("(null)");
 	if (format == emp && i == 0)
-		return (0);*/
+		return (0);
 
 	va_start(arg, format);
 
