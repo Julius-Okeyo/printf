@@ -9,6 +9,9 @@
  */
 int _printf(const char *const format, ...)
 {
+	if (format == NULL)
+		exit 1;
+
 	int a = 0, i = 0, j = 0;
 	int k, rem, num, div, sign = 0;
 	char c;
@@ -16,10 +19,6 @@ int _printf(const char *const format, ...)
 	char *str;
 	va_list arg;
 
-	if (format == NULL)
-	{
-		exit (0);
-	}
 	if (format == emp)
 	{
 		return (0);
