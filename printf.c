@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
 #include "main.h"
@@ -27,15 +28,20 @@ int _printf(const char *const format, ...)
 	{
 		if (format[j] == '%')
 		{
+			while (format[j + 1] >= 48 && format[j + 1] <= 57)
+			{
+				_putchar(' ');
+				j++;
+			}
 			switch (format[j + 1]) {
 				case 'c':
 					c = va_arg(arg, int);
-					if (c >= 32 && c <= 126)
+					if (c != 0)
 					{
 						_putchar(c);
 						a++;
 					}
-					else
+					if (c == 0)
 					{
 						_putchar(' ');
 						a++;
