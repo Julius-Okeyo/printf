@@ -49,7 +49,6 @@ int _printf(const char *const format, ...)
 					if (format[j + 2] == '\0')
 					{
 						_putchar('\n');
-						a++;
 					}
 					break;
 				case 's':
