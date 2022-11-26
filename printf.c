@@ -70,7 +70,7 @@ int _printf(const char *const format, ...)
 					if (format[j + 2] == '\0')
 						_putchar('\n');
 					break;
-				case 'i':
+				/*case 'i':
 					k = 1;
 					div = 10;
 					rem = va_arg(arg, int);
@@ -125,7 +125,7 @@ int _printf(const char *const format, ...)
 					}
 					_putchar(rem + '0');
 					a++;
-					break;
+					break;*/
 
 			}
 			j++;
