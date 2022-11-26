@@ -48,6 +48,7 @@ int _printf(const char *const format, ...)
 						_putchar('\n');
 					break;
 				case 's':
+					str = malloc(20);
 					str = va_arg(arg, char *);
 					if (str != NULL)
 					{
@@ -61,8 +62,13 @@ int _printf(const char *const format, ...)
 							i++;
 						}
 					}
-					else
+					if (str == emp)
 						continue;
+					if (str == NULL)
+					{
+						_printf("Error");
+						exit (1);
+					}
 					if (format[j + 2] == '\0')
 						_putchar('\n');
 					break;
