@@ -35,13 +35,15 @@ int _printf(const char *const format, ...)
 				case 'c':
 					c = va_arg(arg, int);
 					if (c == 0)
-						_putchar('\n');
+					{
+						_putchar(' ');
+						a++;
+					}
 					else
 					{
 						_putchar(c);
 						a++;
 					}
-					_putchar('\n');
 					break;
 				case 's':
 					str = va_arg(arg, char *);
