@@ -15,15 +15,10 @@ int _printf(const char *const format, ...)
 	char *emp = "";
 	va_list arg;
 
-	if (format == NULL)
-	{
-		if (i == 0)
-			return (-1);
-		else
-		{
-			_printf("(null)");
-		}
-	}
+	if (format == NULL && i = 0)
+		return (-1);
+	if (format == NULL && i == 1)
+		_printf("(null)");
 	if (format == emp && i == 0)
 		return (0);
 
