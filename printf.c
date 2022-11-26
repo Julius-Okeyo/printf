@@ -23,7 +23,7 @@ int _printf(const char *const format, ...)
 	}
 	if (format == emp)
 	{
-		_printf('\n');
+		_putchar('\n');
 		return (0);
 	}
 	va_start(arg, format);
