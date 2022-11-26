@@ -21,7 +21,8 @@ int _printf(const char *const format, ...)
 
 	if (format == emp)
 	{
-		return (0);
+		_putchar('\n');
+		return (1);
 	}
 
 	va_start(arg, format);
