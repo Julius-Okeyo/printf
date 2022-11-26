@@ -12,7 +12,7 @@ int _printf(const char *const format, ...)
 	int a = 0, i = 0, j = 0;
 	int k, rem, num, div, sign = 0;
 	char c;
-	char *emp = "";
+	/*char *emp = "";*/
 	va_list arg;
 
 	if (format == NULL && i == 0)
