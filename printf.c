@@ -9,20 +9,13 @@
  */
 int _printf(const char *const format, ...)
 {
-	int a = 0, i = 0, j = 0;
+	int a = 0, j = 0;
 	int k, rem, num, div, sign = 0;
 	char c;
-	char *emp = "";
-	char *str;
 	va_list arg;
 
 	if (format == NULL)
 		return (-1);
-
-	if (format == emp)
-	{
-		return (1);
-	}
 
 	va_start(arg, format);
 
@@ -48,28 +41,6 @@ int _printf(const char *const format, ...)
 					break;
 				case 's':
 					_printf(va_arg(arg, char *));
-					/*str = va_arg(arg, char *);
-					if (str != NULL)
-					{
-						while (str[i])
-						{
-							if (str[i] >= 32 && str[i] <= 126)
-							{
-								_putchar(str[i]);
-								a++;
-							}
-							i++;
-						}
-					}*/
-					if (str == emp)
-						continue;
-					if (str == NULL)
-					{
-						_printf("Error");
-						exit (1);
-					}
-					if (format[j + 2] == '\0')
-						_putchar('\n');
 					break;
 				case 'i':
 					k = 1;
