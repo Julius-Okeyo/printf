@@ -117,6 +117,7 @@ int _printf(const char *const format, ...)
 					break;
 				default:
 					_putchar('%');
+					_putchar(format[j + 1]);
 
 			}
 			j++;
