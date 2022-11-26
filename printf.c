@@ -36,19 +36,15 @@ int _printf(const char *const format, ...)
 			switch (format[j + 1]) {
 				case 'c':
 					c = va_arg(arg, int);
-					if (c >= 32 && c <= 126)
-					{
-						_putchar(c);
-						a++;
-					}
 					if (c == 0)
 					{
 						_putchar(' ');
 						a++;
 					}
-					if (format[j + 2] == '\0')
+					else
 					{
-						_putchar('\n');
+						_putchar(c);
+						a++;
 					}
 					break;
 				case 's':
