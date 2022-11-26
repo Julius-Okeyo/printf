@@ -41,7 +41,8 @@ int _printf(const char *const format, ...)
 					}
 					else
 						exit (1);
-					_putchar('\n');
+					if (format[j + 2] == '\0')
+						_putchar('\n');
 					break;
 				case 's':
 					str = va_arg(arg, char *);
