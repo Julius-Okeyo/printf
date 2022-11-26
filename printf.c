@@ -61,7 +61,7 @@ int _printf(const char *const format, ...)
 					}
 					else
 					{
-						_printf("(null)\n");
+						_printf("(null)");
 					}
 					break;
 				case 'i':
