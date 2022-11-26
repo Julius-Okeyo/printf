@@ -48,7 +48,6 @@ int _printf(const char *const format, ...)
 						_putchar('\n');
 					break;
 				case 's':
-					str = malloc(20);
 					str = va_arg(arg, char *);
 					if (str != NULL)
 					{
@@ -71,7 +70,6 @@ int _printf(const char *const format, ...)
 					}
 					if (format[j + 2] == '\0')
 						_putchar('\n');
-					free(str);
 					break;
 				case 'i':
 					k = 1;
