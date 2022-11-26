@@ -40,9 +40,7 @@ int _printf(const char *const format, ...)
 						a++;
 					}
 					else
-					{
-						_putchar(' ');
-					}
+						continue;
 					break;
 				case 's':
 					str = va_arg(arg, char *);
@@ -60,8 +58,7 @@ int _printf(const char *const format, ...)
 					}
 					else
 					{
-						_putchar('\n');
-						exit (1);
+						continue;
 					}
 					break;
 				case 'i':
