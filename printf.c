@@ -20,7 +20,10 @@ int _printf(const char *const format, ...)
 		exit (1);
 
 	if (format == emp)
+	{
+		_putchar('\n');
 		return (0);
+	}
 
 	va_start(arg, format);
 
