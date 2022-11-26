@@ -126,9 +126,6 @@ int _printf(const char *const format, ...)
 					_putchar(rem + '0');
 					a++;
 					break;
-				default:
-					_putchar('%');
-					_putchar(format[j + 1]);
 
 			}
 			j++;
