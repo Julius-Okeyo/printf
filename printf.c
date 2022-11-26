@@ -20,7 +20,7 @@ int _printf(const char *const format, ...)
 	{
 		_putchar('\0');
 		_putchar('\n');
-		return(1);
+		return(0);
 	}
 
 	va_start(arg, format);
