@@ -16,7 +16,7 @@ int _printf(const char *const format, ...)
 
 	if (format == NULL)
 	{
-		if (i = 0)
+		if (i == 0)
 			return (-1);
 		else
 			_printf("(null)");
