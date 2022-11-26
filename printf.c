@@ -40,7 +40,10 @@ int _printf(const char *const format, ...)
 						a++;
 					}
 					else
+					{
 						_putchar(' ');
+						a++;
+					}
 					if (format[j + 2] == '\0')
 						_putchar('\n');
 					break;
