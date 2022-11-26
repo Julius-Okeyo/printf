@@ -18,6 +18,8 @@ int _printf(const char *const format, ...)
 
 	if (format == NULL)
 		return (-1);
+	if (format == emp)
+		return (0);
 
 	va_start(arg, format);
 
@@ -28,14 +30,14 @@ int _printf(const char *const format, ...)
 			switch (format[j + 1]) {
 				case 'c':
 					c = va_arg(arg, int);
-					if (c == 0)
+					if (c >= 32 && c <= 126)
 					{
-						_putchar(' ');
+						_putchar(c);
 						a++;
 					}
 					else
 					{
-						_putchar(c);
+						_putchar(' ');
 						a++;
 					}
 					break;
