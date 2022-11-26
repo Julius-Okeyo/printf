@@ -112,7 +112,7 @@ int _printf(const char *const format, ...)
 					a++;
 					break;
 			}
-			j += 2;
+			j ++;
 		}
 		else
 			_putchar(format[j]);
