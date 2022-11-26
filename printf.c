@@ -10,7 +10,7 @@
 int _printf(const char *const format, ...)
 {
 	if (format == NULL)
-		exit 1;
+		exit (1);
 
 	int a = 0, i = 0, j = 0;
 	int k, rem, num, div, sign = 0;
