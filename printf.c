@@ -9,9 +9,6 @@
  */
 int _printf(const char *const format, ...)
 {
-	if (format == NULL)
-		exit (1);
-
 	int a = 0, i = 0, j = 0;
 	int k, rem, num, div, sign = 0;
 	char c;
@@ -19,11 +16,14 @@ int _printf(const char *const format, ...)
 	char *str;
 	va_list arg;
 
+	if (format == NULL)
+		exit (1);
+
 	if (format == emp)
-	{
 		return (0);
-	}
+
 	va_start(arg, format);
+
 	while (format[j])
 	{
 		if (format[j] == '%')
@@ -31,8 +31,13 @@ int _printf(const char *const format, ...)
 			switch (format[j + 1]) {
 				case 'c':
 					c = va_arg(arg, int);
-					_putchar(c);
-					a++;
+					if (c != 0)
+					{
+						_putchar(c);
+						a++;
+					}
+					else
+						exit (1);
 					break;
 				case 's':
 					str = va_arg(arg, char *);
@@ -50,7 +55,7 @@ int _printf(const char *const format, ...)
 					}
 					else
 					{
-						_printf("(null)");
+						exit (1);
 					}
 					break;
 				case 'i':
