@@ -31,6 +31,7 @@ int _printf(const char *const format, ...)
 			while (format[j + 1] >= 48 && format[j + 1] <= 57)
 			{
 				_putchar(' ');
+				a++;
 				j++;
 			}
 			switch (format[j + 1]) {
