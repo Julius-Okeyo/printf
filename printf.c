@@ -21,7 +21,6 @@ int _printf(const char *const format, ...)
 
 	if (format == emp)
 	{
-		_putchar('\n');
 		return (1);
 	}
 
