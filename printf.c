@@ -10,7 +10,7 @@
 int _printf(const char *const format, ...)
 {
 	int a = 0, i = 0, j = 0;
-	/*int k, rem, num, div, sign = 0;*/
+	int k, rem, num, div, sign = 0;
 	char c;
 	char *emp = "";
 	char *str;
@@ -47,7 +47,8 @@ int _printf(const char *const format, ...)
 						_putchar('\n');
 					break;
 				case 's':
-					str = va_arg(arg, char *);
+					_printf(va_arg(arg, char *));
+					/*str = va_arg(arg, char *);
 					if (str != NULL)
 					{
 						while (str[i])
@@ -59,7 +60,7 @@ int _printf(const char *const format, ...)
 							}
 							i++;
 						}
-					}
+					}*/
 					if (str == emp)
 						continue;
 					if (str == NULL)
@@ -70,7 +71,7 @@ int _printf(const char *const format, ...)
 					if (format[j + 2] == '\0')
 						_putchar('\n');
 					break;
-				/*case 'i':
+				case 'i':
 					k = 1;
 					div = 10;
 					rem = va_arg(arg, int);
@@ -125,7 +126,7 @@ int _printf(const char *const format, ...)
 					}
 					_putchar(rem + '0');
 					a++;
-					break;*/
+					break;
 
 			}
 			j++;
