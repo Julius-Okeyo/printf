@@ -19,8 +19,9 @@ int _printf(const char *const format, ...)
 		if (i == 0)
 			return (-1);
 		else
+		{
 			_printf("(null)");
-	}
+		}
 
 	va_start(arg, format);
 
@@ -36,7 +37,7 @@ int _printf(const char *const format, ...)
 						_putchar(c);
 						a++;
 					}
-					else
+					/*else
 					{
 						_putchar(' ');
 						a++;
@@ -45,7 +46,7 @@ int _printf(const char *const format, ...)
 					{
 						_putchar('\n');
 						a++;
-					}
+					}*/
 					break;
 				case 's':
 					i = 1;
