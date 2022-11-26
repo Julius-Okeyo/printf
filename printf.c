@@ -48,6 +48,7 @@ int _printf(const char *const format, ...)
 					}
 					break;
 				case 's':
+					i = 1;
 					_printf(va_arg(arg, char *));
 					break;
 				case 'i':
