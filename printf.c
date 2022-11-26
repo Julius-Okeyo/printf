@@ -17,12 +17,11 @@ int _printf(const char *const format, ...)
 	va_list arg;
 
 	if (format == NULL)
-		exit (1);
+		return (-1);
 
 	if (format == emp)
 	{
-		_putchar('\n');
-		return (0);
+		return (-1);
 	}
 
 	va_start(arg, format);
