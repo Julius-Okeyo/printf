@@ -15,7 +15,7 @@ int _printf(const char *const format, ...)
 	char *emp = "";
 	va_list arg;
 
-	if (format == NULL && i = 0)
+	if (format == NULL && i == 0)
 		return (-1);
 	if (format == NULL && i == 1)
 		_printf("(null)");
