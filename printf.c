@@ -46,11 +46,6 @@ int _printf(const char *const format, ...)
 						_putchar(' ');
 						a++;
 					}
-					if (format[j + 2] == '\0')
-					{
-						_putchar('\n');
-						a++;
-					}
 					break;
 				case 's':
 					i = 1;
@@ -121,6 +116,8 @@ int _printf(const char *const format, ...)
 		a++;
 		j++;
 	}
+	if (format[j] != '\n')
+		_putchar('\n');
 	va_end(arg);
 	return (a - 1);
 }
