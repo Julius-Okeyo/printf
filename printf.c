@@ -18,7 +18,7 @@ int _printf(const char *const format, ...)
 
 	if (format == NULL)
 	{
-		exit (1);
+		exit (0);
 	}
 	if (format == emp)
 	{
