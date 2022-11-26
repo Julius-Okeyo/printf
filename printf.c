@@ -9,13 +9,18 @@
  */
 int _printf(const char *const format, ...)
 {
-	int a = 0, j = 0;
+	int a = 0, i = 0, j = 0;
 	int k, rem, num, div, sign = 0;
 	char c;
 	va_list arg;
 
 	if (format == NULL)
-		return (-1);
+	{
+		if (i = 0)
+			return (-1);
+		else
+			_printf("(null)");
+	}
 
 	va_start(arg, format);
 
@@ -37,7 +42,10 @@ int _printf(const char *const format, ...)
 						a++;
 					}
 					if (format[j + 2] == '\0')
+					{
 						_putchar('\n');
+						a++;
+					}
 					break;
 				case 's':
 					_printf(va_arg(arg, char *));
