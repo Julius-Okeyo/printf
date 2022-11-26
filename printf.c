@@ -34,16 +34,8 @@ int _printf(const char *const format, ...)
 			switch (format[j]) {
 				case 'c':
 					c = va_arg(arg, int);
-					if (c == 0)
-					{
-						_putchar(' ');
-						a++;
-					}
-					else
-					{
-						_putchar(c);
-						a++;
-					}
+					_putchar(c);
+					a++;
 					break;
 				case 's':
 					str = va_arg(arg, char *);
