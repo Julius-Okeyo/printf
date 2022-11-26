@@ -16,15 +16,9 @@ int _printf(const char *const format, ...)
 	char *str;
 	va_list arg;
 
-	if (format == NULL)
+	if (format == NULL || format == emp)
 	{
-		a = _printf("error: too few arguments to function '_printf'\n");
-		return (a);
-	}
-	if (format == emp)
-	{
-		_putchar('\n');
-		return (1);
+		return (0);
 	}
 	va_start(arg, format);
 	while (format[j])
