@@ -41,11 +41,11 @@ int _printf(const char *const format, ...)
 						_putchar(c);
 						a++;
 					}
-					/*else
+					if (c == 0)
 					{
 						_putchar(' ');
 						a++;
-					}*/
+					}
 					if (format[j + 2] == '\0')
 					{
 						_putchar('\n');
