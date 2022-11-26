@@ -18,12 +18,13 @@ int _printf(const char *const format, ...)
 
 	if (format == NULL)
 	{
-		_printf("error: too few arguments to function '_printf'\n");
+		a = _printf("error: too few arguments to function '_printf'\n");
 		return (a);
 	}
 	if (format == emp)
 	{
-		return (0);
+		_putchar('\n');
+		return (1);
 	}
 	va_start(arg, format);
 	while (format[j])
@@ -120,6 +121,5 @@ int _printf(const char *const format, ...)
 		j++;
 	}
 	va_end(arg);
-	_putchar('\0');
 	return (a);
 }
