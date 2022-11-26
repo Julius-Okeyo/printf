@@ -12,6 +12,7 @@ int _printf(const char *const format, ...)
 	int a = 0, i = 0, j = 0;
 	int k, rem, num, div, sign = 0;
 	char c;
+	char *emp = "";
 	va_list arg;
 
 	if (format == NULL)
@@ -23,6 +24,8 @@ int _printf(const char *const format, ...)
 			_printf("(null)");
 		}
 	}
+	if (format == emp && i == 0)
+		return (0);
 
 	va_start(arg, format);
 
@@ -42,12 +45,12 @@ int _printf(const char *const format, ...)
 					{
 						_putchar(' ');
 						a++;
-					}
+					}*/
 					if (format[j + 2] == '\0')
 					{
 						_putchar('\n');
 						a++;
-					}*/
+					}
 					break;
 				case 's':
 					i = 1;
