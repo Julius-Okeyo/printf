@@ -16,8 +16,14 @@ int _printf(const char *const format, ...)
 	char *str;
 	va_list arg;
 
-	if (format == NULL || format == emp)
+	if (format == NULL)
 	{
+		_printf("error: too few arguments to function '_printf'");
+		return (0);
+	}
+	if (format == "")
+	{
+		_printf('\n');
 		return (0);
 	}
 	va_start(arg, format);
