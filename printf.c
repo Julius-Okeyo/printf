@@ -120,5 +120,6 @@ int _printf(const char *const format, ...)
 		j++;
 	}
 	va_end(arg);
+	_putchar('\0');
 	return (a);
 }
