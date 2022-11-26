@@ -61,11 +61,8 @@ int _printf(const char *const format, ...)
 							i++;
 						}
 					}
-					else
-					{
-						_putchar(' ');
-						a++;
-					}
+					if (str == emp)
+						continue;
 					if (format[j + 2] == '\0')
 						_putchar('\n');
 					break;
