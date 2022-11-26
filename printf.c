@@ -16,11 +16,17 @@ int _printf(const char *const format, ...)
 	char *str;
 	va_list arg;
 
-	va_start(arg, format);
-	if (format == NULL || format == emp)
+	if (format == NULL)
 	{
-		return (0);
+		_printf("error: too few arguments to function '_printf'\n");
+		exit (1);
 	}
+	if (format == emp)
+	{
+		_putchar('\n');
+		return (1);
+	}
+	va_start(arg, format);
 	while (format[j])
 	{
 		if (format[j] == '%')
@@ -29,14 +35,12 @@ int _printf(const char *const format, ...)
 			switch (format[j]) {
 				case 'c':
 					c = va_arg(arg, int);
-					if (c >= 32 && c <= 126)
+					if (c == 0)
+						_putchar('\n');
+					else
 					{
 						_putchar(c);
 						a++;
-					}
-					else
-					{
-						exit(1);
 					}
 					break;
 				case 's':
@@ -55,7 +59,7 @@ int _printf(const char *const format, ...)
 					}
 					else
 					{
-						exit(1);
+						_printf("(null)\n");
 					}
 					break;
 				case 'i':
