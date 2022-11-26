@@ -40,7 +40,7 @@ int _printf(const char *const format, ...)
 						a++;
 					}
 					else
-						continue;
+						exit (1);
 					break;
 				case 's':
 					str = va_arg(arg, char *);
@@ -57,9 +57,7 @@ int _printf(const char *const format, ...)
 						}
 					}
 					else
-					{
-						continue;
-					}
+						exit (1);
 					break;
 				case 'i':
 					k = 1;
@@ -117,6 +115,9 @@ int _printf(const char *const format, ...)
 					_putchar(rem + '0');
 					a++;
 					break;
+				default:
+					_putchar('%');
+
 			}
 			j++;
 		}
