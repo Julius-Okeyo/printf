@@ -16,7 +16,7 @@ int _printf(const char *const format, ...)
 	char *str;
 	va_list arg;
 
-	if (format == NULL)
+	if (format == emp)
 	{
 		_putchar('\0');
 		_putchar('\n');
