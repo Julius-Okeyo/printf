@@ -41,6 +41,7 @@ int _printf(const char *const format, ...)
 						_putchar(c);
 						a++;
 					}
+					_putchar('\n');
 					break;
 				case 's':
 					str = va_arg(arg, char *);
