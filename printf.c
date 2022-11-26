@@ -61,7 +61,7 @@ int _printf(const char *const format, ...)
 							i++;
 						}
 					}
-					if (str == emp)
+					else
 						continue;
 					if (format[j + 2] == '\0')
 						_putchar('\n');
