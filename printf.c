@@ -18,7 +18,8 @@ int _printf(const char *const format, ...)
 
 	if (format == NULL)
 	{
-		return (0);
+		_printf("error: too few arguments to function '_printf'");
+		return (a);
 	}
 	if (format == emp)
 	{
