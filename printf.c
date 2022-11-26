@@ -17,9 +17,9 @@ int _printf(const char *const format, ...)
 
 	if (format == NULL && i == 0)
 		return (-1);
-	if (format == NULL && i == 1)
+	/*if (format == NULL && i == 1)
 		_printf("(null)");
-	/*if (format == emp && i == 0)
+	if (format == emp && i == 0)
 		return (0);*/
 
 	va_start(arg, format);
