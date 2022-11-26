@@ -22,6 +22,7 @@ int _printf(const char *const format, ...)
 		{
 			_printf("(null)");
 		}
+	}
 
 	va_start(arg, format);
 
