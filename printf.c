@@ -119,5 +119,5 @@ int _printf(const char *const format, ...)
 	if (format[j] != '\n')
 		_putchar('\n');
 	va_end(arg);
-	return (a - 1);
+	return (a);
 }
