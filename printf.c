@@ -30,8 +30,7 @@ int _printf(const char *const format, ...)
 	{
 		if (format[j] == '%')
 		{
-			j++;
-			switch (format[j]) {
+			switch (format[j + 1]) {
 				case 'c':
 					c = va_arg(arg, int);
 					_putchar(c);
@@ -113,6 +112,7 @@ int _printf(const char *const format, ...)
 					a++;
 					break;
 			}
+			j += 2;
 		}
 		else
 			_putchar(format[j]);
