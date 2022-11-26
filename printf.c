@@ -18,13 +18,11 @@ int _printf(const char *const format, ...)
 
 	if (format == NULL)
 	{
-		_printf("error: too few arguments to function '_printf'\n");
-		exit (1);
+		return (0);
 	}
 	if (format == emp)
 	{
-		_putchar('\n');
-		return (1);
+		return (0);
 	}
 	va_start(arg, format);
 	while (format[j])
