@@ -117,47 +117,29 @@ int _printf(const char *const format, ...)
 	{
 		if (format[j] == '%')
 		{
-			if (format[j + 1] >= 48 && format[j + 1] <= 5)
+			switch(format[j + 1])
 			{
-				z = (int)(format[j + 1] - 48);
-				for (i = 0; i < z; i++)
-				{
-					_putchar(' ');
-					a++;
-				}
-				j++;
-				if (format[j + 1] == 'i' || format[j + 1] == 'd')
-				{
+				case 'c':
+					c = va_arg(arg, int);
+					a += print_char(c);
+					break;
+				case 's':
+					str = va_arg(arg, char *);
+					a += print_string(str);
+					break;
+				case 'i':
 					rem = va_arg(arg, int);
 					a += print_int(rem);
-				}
-			}
-			else
-			{
-				switch(format[j + 1])
-				{
-					case 'c':
-						c = va_arg(arg, int);
-						a += print_char(c);
-						break;
-					case 's':
-						str = va_arg(arg, char *);
-						a += print_string(str);
-						break;
-					case 'i':
-						rem = va_arg(arg, int);
-						a += print_int(rem);
-						break;
-					case 'd':
-						rem = va_arg(arg, int);
-						a += print_int(rem);
-						break;
-					default:
-				      		_putchar(format[j]);
-				     	 	_putchar(format[j + 1]);
-			      			a += 2;
-						break;
-				}
+					break;
+				case 'd':
+					rem = va_arg(arg, int);
+					a += print_int(rem);
+					break;
+				default:
+			     		_putchar(format[j]);
+			     	 	_putchar(format[j + 1]);
+		    			a += 2;
+					break;
 			}
 			j++;
 		}
