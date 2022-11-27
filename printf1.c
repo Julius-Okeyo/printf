@@ -117,50 +117,47 @@ int _printf(const char *const format, ...)
 	{
 		if (format[j] == '%')
 		{
-			if (format[j + 1] == 'c' || format[j + 1] == 'C')
+			if (format[j + 1] >= 48 && format[j + 1] <= 5)
 			{
-				c = va_arg(arg, int);
-				a += print_char(c);
+				z = (int)(format[j + 1] - 48);
+				for (i = 0; i < z; i++)
+				{
+					_putchar(' ');
+					a++;
+				}
+				j++;
+				if (format[j + 1] == 'i' || format[j + 1] == 'd')
+				{
+					rem = va_arg(arg, int);
+					a += print_int(rem);
+				}
 			}
 			else
 			{
-				if (format[j + 1] == 's')
+				switch(format[j + 1])
 				{
-					str = va_arg(arg, char *);
-					a += print_string(str);
-				}
-			       else
-			       {
-				       if (format[j + 1] == 'i' || format[j + 1] == 'd')
-				       {
+					case 'c':
+						c = va_arg(arg, int);
+						a += print_char(c);
+						break;
+					case 's':
+						str = va_arg(arg, char *);
+						a += print_string(str);
+						break;
+					case 'i':
 						rem = va_arg(arg, int);
 						a += print_int(rem);
-				       }
-				       else
-				       {
-					       if (format[j + 1] >= 48 && format[j + 1] <= 57)
-					       {
-						       z = (int)(format[j + 1] - 48);
-						       for (i = 0; i < z; i++)
-						       {
-							       _putchar(' ');
-							       a++;
-						       }
-						       j++;
-						       if (format[j + 1] == 'i' || format[j + 1] == 'd')
-						       {
-							       rem = va_arg(arg, int);
-							       a += print_int(rem);
-						       }
-					       }
-					       else
-					       {
-						       _putchar(format[j]);
-						       _putchar(format[j + 1]);
-						       a += 2;
-					       }
-				       }
-			       }
+						break;
+					case 'd':
+						rem = va_arg(arg, int);
+						a += print_int(rem);
+						break;
+					default:
+				      		_putchar(format[j]);
+				     	 	_putchar(format[j + 1]);
+			      			a += 2;
+						break;
+				}
 			}
 			j++;
 		}
