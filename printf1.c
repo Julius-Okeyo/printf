@@ -85,7 +85,6 @@ int print_int(int rem)
 		k /= 10;
 	}
 	_putchar(rem + '0');
-	a++;
 	return (a);
 }
 
