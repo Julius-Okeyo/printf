@@ -11,7 +11,7 @@
 
 int _printf(const char *const format, ...)
 {
-	int a = 0, j = 0;
+	int a = 0, j = 0, i, z;
 	int k, rem, num, div, sign = 0;
 	char c;
 	char *str;
@@ -92,9 +92,53 @@ int _printf(const char *const format, ...)
 					}
 				       else
 				       {
-					       _putchar(format[j]);
-					       _putchar(format[j + 1]);
-					       a += 2;
+					       if (format[j + 1] >= 48 && format[j + 1] <= 57)
+					       {
+						       z = (int)(format[j + 1] - 48);
+						       for (i = 0; i < z; i++)
+						       {
+							       _putchar(' ');
+							       a++;
+						       }
+						       j++;
+						       if (format[j + 1] == 'i' || format[j + 1] == 'd')
+						       {
+							       k = 1;
+							       div = 10;
+							       rem = va_arg(arg, int);
+							       if (rem < 0)
+							       {
+								       sign = 1;
+								       rem = (-1 * rem);
+							       }
+							       num = rem;
+							       while (div >= 10)
+							       {
+								       k *= 10;
+								       div = num / k;
+							       }
+							       if (sign == 1)
+							       {
+								       _putchar('-');
+							       }
+							       while (rem > 10)
+							       {
+								       div = rem / k;
+								       rem = rem % k;
+								       _putchar(div + '0');
+								       a++;
+								       k /= 10;
+							       }
+							       _putchar(rem + '0');
+							       a++;
+						       }
+					       }
+					       else
+					       {
+						       _putchar(format[j]);
+						       _putchar(format[j + 1]);
+						       a += 2;
+					       }
 				       }
 			       }
 			}
