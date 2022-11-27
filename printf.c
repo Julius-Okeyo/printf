@@ -11,9 +11,11 @@
 int _printf(const char *const format, ...)
 {
 	int a = 0, j = 0;
+	int i;
 	int k, rem, num, div, sign = 0;
 	char c;
 	char *str;
+	char *s = "";
 	char *emp = "";
 	va_list arg;
 
@@ -30,9 +32,15 @@ int _printf(const char *const format, ...)
 		{
 			while (format[j + 1] >= 48 && format[j + 1] <= 57)
 			{
+				s += format[j + 1];
+				j++;
+			}
+			printf("%s\n", s);
+			printf("%d\n", atoi(s));
+			for (i = 0; i < atoi(s); i++)
+			{
 				_putchar(' ');
 				a++;
-				j++;
 			}
 			switch (format[j + 1]) {
 				case 'c':
