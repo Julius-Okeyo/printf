@@ -4,7 +4,7 @@
 #include "main.h"
 
 /**
- * print_char - prints a char
+ * print_char - prints a character
  * @c: character to be printed
  * Return: The number of characters printed
  */
@@ -63,7 +63,7 @@ int print_int(int rem)
 	if (rem < 0)
 	{
 		sign = 1;
-		rem = (-1 * rem);
+		rem *= -1;
 	}
 	num = rem;
 	while (div >= 10)
@@ -79,7 +79,7 @@ int print_int(int rem)
 	while (rem > 10)
 	{
 		div = rem / k;
-		rem = rem % k;
+		rem %= k;
 		_putchar(div + '0');
 		a++;
 		k /= 10;
@@ -88,7 +88,6 @@ int print_int(int rem)
 	a++;
 	return (a);
 }
-
 
 /**
  * _printf - mimics the behavior of printf
@@ -107,7 +106,10 @@ int _printf(const char *const format, ...)
 	if (format == NULL)
 		return (-1);
 	if (format == emp)
-		return (0);
+	{
+		_putchar('\n');
+		return (1);
+	}
 
 	va_start(arg, format);
 
