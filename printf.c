@@ -45,7 +45,7 @@ int _printf(const char *const format, ...)
 			}
 			else
 			{
-				if (format[j + 1] == 's' || format[j + 1] == 'S')
+				if (format[j + 1] == 's')
 				{
 					str = va_arg(arg, char *);
 					if (str == emp)
@@ -61,7 +61,7 @@ int _printf(const char *const format, ...)
 				}
 			       else
 			       {
-				       if (format[j + 1] == 'i' || format[j + 1] == 'I' || format[j + 1] == 'D' || format[j + 1] == 'd')
+				       if (format[j + 1] == 'i' || format[j + 1] == 'd')
 				       {
 						k = 1;
 						div = 10;
