@@ -107,7 +107,8 @@ int _printf(const char *const format, ...)
 		return (-1);
 	if (format == emp)
 	{
-		return (-1);
+		_putchar('\0');
+		return (0);
 	}
 
 	va_start(arg, format);
