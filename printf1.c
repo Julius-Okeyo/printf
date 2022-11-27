@@ -97,22 +97,14 @@ int print_int(int rem)
 
 int _printf(const char *const format, ...)
 {
-	int a = 0, j = 0, i, z, rem;
+	int a = 0, j = 0, rem;
 	char c;
 	char *str;
-	char *emp = "";
 	va_list arg;
 
 	if (format == NULL)
 		return (-1);
-	if (format == emp)
-	{
-		_putchar('\0');
-		return (0);
-	}
-
 	va_start(arg, format);
-
 	while (format[j] != '\n' && format[j] != '\0')
 	{
 		if (format[j] == '%')
