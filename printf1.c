@@ -108,7 +108,6 @@ int _printf(const char *const format, ...)
 	if (format == emp)
 	{
 		_putchar('\0');
-		_putchar('\n');
 		return (0);
 	}
 
