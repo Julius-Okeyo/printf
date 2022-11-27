@@ -1,12 +1,8 @@
 #include <stdarg.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
 #include "main.h"
 
-int print_char(char c);
-int print_int(int rem);
-int print_string(char *s);
 /**
  * print_char - prints a char
  * @c: character to be printed
