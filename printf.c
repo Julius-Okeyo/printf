@@ -8,6 +8,7 @@
  * @format: string to be printed including string formatters
  * Return: The number of characters printed
  */
+
 int _printf(const char *const format, ...)
 {
 	int a = 0, j = 0;
@@ -28,90 +29,62 @@ int _printf(const char *const format, ...)
 	{
 		if (format[j] == '%')
 		{
-			switch (format[j + 1]) {
-				case 'c':
-					c = va_arg(arg, int);
-					if (c != 0)
-					{
-						_putchar(c);
-						a++;
-					}
-					if (c == 0)
-					{
-						_putchar(' ');
-						a++;
-					}
-					break;
-				case 's':
-					str = va_arg(arg, char *);
-					if (str == emp)
-						continue;
-					if (str == NULL)
-						str = "(null)";
-					while (*str)
-					{
-						_putchar(*str);
-						a++;
-						str++;
-					}
-					break;
-				case 'i':
-					k = 1;
-					div = 10;
-					rem = va_arg(arg, int);
-					if (rem < 0)
-					{
-						sign = 1;
-						rem = (-1 * rem);
-					}
-					num = rem;
-					while (div >= 10)
-					{
-						k *= 10;
-						div = num / k;
-					}
-					if (sign == 1)
-						_putchar('-');
-					while (rem > 10)
-					{
-						div = rem / k;
-						rem = rem % k;
-						_putchar(div + '0');
-						a++;
-						k /= 10;
-					}
-					_putchar(rem + '0');
+			if (format[j + 1] == 'c')
+			{
+				c = va_arg(arg, int);
+				if (c != 0)
+				{
+					_putchar(c);
 					a++;
-					break;
-				case 'd':
-					k = 1;
-					div = 10;
-					rem = va_arg(arg, int);
-					if (rem < 0)
-					{
-						sign = 1;
-						rem = (-1 * rem);
-					}
-					num = rem;
-					while (div >= 10)
-					{
-						k *= 10;
-						div = num / k;
-					}
-					if (sign == 1)
-						_putchar('-');
-					while (rem > 10)
-					{
-						div = rem / k;
-						rem = rem % k;
-						_putchar(div + '0');
-						a++;
-						k /= 10;
-					}
-					_putchar(rem + '0');
+				}
+				if (c == 0)
+				{
+					_putchar(' ');
 					a++;
-					break;
-
+				}
+			}
+			if (format[j + 1] == 's')
+			{
+				str = va_arg(arg, char *);
+				if (str == emp)
+					continue;
+				if (str == NULL)
+					str = "(null)";
+				while (*str)
+				{
+					_putchar(*str);
+					a++;
+					str++;
+				}
+			}
+		       if (format[j + 1] == 'i' || format[j + 1] == 'd')
+		       {
+				k = 1;
+				div = 10;
+				rem = va_arg(arg, int);
+				if (rem < 0)
+				{
+					sign = 1;
+					rem = (-1 * rem);
+				}
+				num = rem;
+				while (div >= 10)
+				{
+					k *= 10;
+					div = num / k;
+				}
+				if (sign == 1)
+					_putchar('-');
+				while (rem > 10)
+				{
+					div = rem / k;
+					rem = rem % k;
+					_putchar(div + '0');
+					a++;
+					k /= 10;
+				}
+				_putchar(rem + '0');
+				a++;
 			}
 			j++;
 		}
@@ -125,7 +98,5 @@ int _printf(const char *const format, ...)
 	_putchar('\n');
 	a++;
 	va_end(arg);
-	/*if (format[j + 1] != '\n')
-		return (a - 1);*/
 	return (a);
 }
