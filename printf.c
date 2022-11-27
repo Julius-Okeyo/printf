@@ -32,7 +32,7 @@ int _printf(const char *const format, ...)
 		{
 			while (format[j + 1] >= 48 && format[j + 1] <= 57)
 			{
-				s += format[j + 1];
+				s += format[j];
 				j++;
 			}
 			printf("%s\n", s);
