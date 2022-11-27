@@ -142,8 +142,8 @@ int _printf(const char *const format, ...)
 		}
 		j++;
 	}
-	/*_putchar('\n');*/
-	a++;
+	/*_putchar('\n');
+	a++;*/
 	va_end(arg);
 	return (a);
 }
