@@ -29,7 +29,7 @@ int _printf(const char *const format, ...)
 	{
 		if (format[j] == '%')
 		{
-			if (format[j + 1] == 'c')
+			if (format[j + 1] == 'c' || format[j + 1] == 'C')
 			{
 				c = va_arg(arg, int);
 				if (c != 0)
@@ -45,7 +45,7 @@ int _printf(const char *const format, ...)
 			}
 			else
 			{
-				if (format[j + 1] == 's')
+				if (format[j + 1] == 's' || format[j + 1] == 'S')
 				{
 					str = va_arg(arg, char *);
 					if (str == emp)
@@ -61,7 +61,7 @@ int _printf(const char *const format, ...)
 				}
 			       else
 			       {
-				       if (format[j + 1] == 'i' || format[j + 1] == 'd')
+				       if (format[j + 1] == 'i' || format[j + 1] == 'I' || format[j + 1] == 'D' || format[j + 1] == 'd')
 				       {
 						k = 1;
 						div = 10;
