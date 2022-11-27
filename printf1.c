@@ -105,7 +105,7 @@ int _printf(const char *const format, ...)
 	if (format == NULL)
 		return (-1);
 	va_start(arg, format);
-	while (format[j] != '\n' && format[j] != '\0')
+	while (format[j] != '\0')
 	{
 		if (format[j] == '%')
 		{
@@ -142,7 +142,7 @@ int _printf(const char *const format, ...)
 		}
 		j++;
 	}
-	_putchar('\n');
+	/*_putchar('\n');*/
 	a++;
 	va_end(arg);
 	return (a);
