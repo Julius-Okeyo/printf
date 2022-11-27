@@ -43,48 +43,60 @@ int _printf(const char *const format, ...)
 					a++;
 				}
 			}
-			if (format[j + 1] == 's')
+			else
 			{
-				str = va_arg(arg, char *);
-				if (str == emp)
-					continue;
-				if (str == NULL)
-					str = "(null)";
-				while (*str)
+				if (format[j + 1] == 's')
 				{
-					_putchar(*str);
-					a++;
-					str++;
+					str = va_arg(arg, char *);
+					if (str == emp)
+						continue;
+					if (str == NULL)
+						str = "(null)";
+					while (*str)
+					{
+						_putchar(*str);
+						a++;
+						str++;
+					}
 				}
-			}
-		       if (format[j + 1] == 'i' || format[j + 1] == 'd')
-		       {
-				k = 1;
-				div = 10;
-				rem = va_arg(arg, int);
-				if (rem < 0)
-				{
-					sign = 1;
-					rem = (-1 * rem);
-				}
-				num = rem;
-				while (div >= 10)
-				{
-					k *= 10;
-					div = num / k;
-				}
-				if (sign == 1)
-					_putchar('-');
-				while (rem > 10)
-				{
-					div = rem / k;
-					rem = rem % k;
-					_putchar(div + '0');
-					a++;
-					k /= 10;
-				}
-				_putchar(rem + '0');
-				a++;
+			       else
+			       {
+				       if (format[j + 1] == 'i' || format[j + 1] == 'd')
+				       {
+						k = 1;
+						div = 10;
+						rem = va_arg(arg, int);
+						if (rem < 0)
+						{
+							sign = 1;
+							rem = (-1 * rem);
+						}
+						num = rem;
+						while (div >= 10)
+						{
+							k *= 10;
+							div = num / k;
+						}
+						if (sign == 1)
+							_putchar('-');
+						while (rem > 10)
+						{
+							div = rem / k;
+							rem = rem % k;
+							_putchar(div + '0');
+							a++;
+							k /= 10;
+						}
+						_putchar(rem + '0');
+						a++;
+					}
+				       else
+				       {
+					       _putchar(format[j]);
+					       _putchar(format[j + 1]);
+					       a += 2;
+				       }
+			       }
 			}
 			j++;
 		}
