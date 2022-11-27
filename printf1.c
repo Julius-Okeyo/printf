@@ -142,8 +142,8 @@ int _printf(const char *const format, ...)
 		}
 		j++;
 	}
-	/*_putchar('\n');
-	a++;*/
+	if (format[j] != '\n')
+		_putchar('\n');
 	va_end(arg);
 	return (a);
 }
