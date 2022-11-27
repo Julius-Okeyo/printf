@@ -119,6 +119,10 @@ int _printf(const char *const format, ...)
 					str = va_arg(arg, char *);
 					a += print_string(str);
 					break;
+				case 'S':
+					str = va_arg(arg, char *);
+					a += print_string(str);
+					break;
 				case 'i':
 					rem = va_arg(arg, int);
 					a += print_int(rem);
